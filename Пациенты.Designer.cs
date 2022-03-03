@@ -48,6 +48,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -250,9 +251,9 @@
             this.label4.ForeColor = System.Drawing.Color.CadetBlue;
             this.label4.Location = new System.Drawing.Point(236, 231);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 31);
+            this.label4.Size = new System.Drawing.Size(58, 31);
             this.label4.TabIndex = 25;
-            this.label4.Text = "Ip";
+            this.label4.Text = "Пол";
             // 
             // textBox4
             // 
@@ -277,9 +278,9 @@
             this.label5.ForeColor = System.Drawing.Color.CadetBlue;
             this.label5.Location = new System.Drawing.Point(236, 299);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 31);
+            this.label5.Size = new System.Drawing.Size(104, 31);
             this.label5.TabIndex = 27;
-            this.label5.Text = "Заходил";
+            this.label5.Text = "Возраст";
             // 
             // textBox5
             // 
@@ -294,12 +295,26 @@
             this.textBox5.Size = new System.Drawing.Size(165, 29);
             this.textBox5.TabIndex = 26;
             // 
+            // textBox6
+            // 
+            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox6.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox6.ForeColor = System.Drawing.Color.CadetBlue;
+            this.textBox6.Location = new System.Drawing.Point(343, 406);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(144, 29);
+            this.textBox6.TabIndex = 28;
+            // 
             // Пациенты
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label4);
@@ -343,5 +358,6 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }

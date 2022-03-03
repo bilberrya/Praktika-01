@@ -17,7 +17,11 @@ namespace lab
         public Пациенты()
         {
             InitializeComponent();
-            string SqlText = "SELECT * FROM [Users]";
+            string SqlText = null;
+            if (MyClass.dolgnost == "lab")
+                SqlText = "SELECT id, name, gender, age FROM [Users]";
+            else if (MyClass.dolgnost == "admin")
+                SqlText = "SELECT * FROM [Users]";
             SqlDataAdapter da = new SqlDataAdapter(SqlText, ConnStr);
             DataSet ds = new DataSet();
             da.Fill(ds, "[Users]");

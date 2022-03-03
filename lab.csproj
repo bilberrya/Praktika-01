@@ -58,11 +58,11 @@
     <Compile Include="Пользователь.Designer.cs">
       <DependentUpon>Пользователь.cs</DependentUpon>
     </Compile>
-    <Compile Include="Главное окно.cs">
+    <Compile Include="Главная.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Главное окно.Designer.cs">
-      <DependentUpon>Главное окно.cs</DependentUpon>
+    <Compile Include="Главная.Designer.cs">
+      <DependentUpon>Главная.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,8 +90,8 @@
     <EmbeddedResource Include="Пользователь.resx">
       <DependentUpon>Пользователь.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Главное окно.resx">
-      <DependentUpon>Главное окно.cs</DependentUpon>
+    <EmbeddedResource Include="Главная.resx">
+      <DependentUpon>Главная.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -102,6 +102,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Результаты.resx">
+      <DependentUpon>Результаты.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Сотрудники.resx">
+      <DependentUpon>Сотрудники.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Услуги.resx">
       <DependentUpon>Услуги.cs</DependentUpon>
     </EmbeddedResource>

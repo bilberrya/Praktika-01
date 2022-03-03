@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace lab
 {
-    public partial class Form1 : Form
+    public partial class Главная : Form
     {
         string ConnStr = @"Data Source=sql;Initial Catalog='44-Практика-Иконникова А.В.-2022';Integrated Security=True";
-        public Form1()
+        public Главная()
         {
             InitializeComponent();
         }
@@ -31,33 +31,33 @@ namespace lab
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string dolgnost, login, name, password;
+            string login, name, password;
             login = textBox1.Text;
             SqlCommand cmd;
             SqlConnection cn = new SqlConnection(ConnStr);
             cn.Open();
             cmd = cn.CreateCommand();
             cmd.CommandText = "select dolgnost from [Workers] where \'" + login + "\' = login";
-            dolgnost = (string) cmd.ExecuteScalar();
+            MyClass.dolgnost = (string)cmd.ExecuteScalar();
             cmd.CommandText = "select name from [Workers] where \'" + login + "\' = login";
             name = (string)cmd.ExecuteScalar();
             cmd.CommandText = "select password from [Workers] where \'" + login + "\' = login";
             password = (string)cmd.ExecuteScalar();
             cn.Close();
 
-            if ((dolgnost == null) || (password != textBox2.Text))
+            if ((MyClass.dolgnost == null) || (password != textBox2.Text))
                 MessageBox.Show("Неправильно введён логин или пароль, повторите ввод.", "Внимание!");
             else
             {
                 Пользователь f = new Пользователь();
                 f.Show();
-                if (dolgnost == "lab")
+                if (MyClass.dolgnost == "lab")
                 {
                     f.label4.Text = name;
                     f.label3.Text = "Лаборант";
                     f.pictureBox1.Image = Image.FromFile("X:/практика 01/lab/laborant_1.jpg");
                 }
-                else if (dolgnost == "admin")
+                else if (MyClass.dolgnost == "admin")
                 {
                     f.label4.Text = name;
                     f.label3.Text = "Администратор";
@@ -65,5 +65,9 @@ namespace lab
                 }
             }
         }
+    }
+    class MyClass
+    {
+        public static string dolgnost { get; set; }
     }
 }

@@ -39,12 +39,19 @@ namespace lab
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Сотрудники f = new Сотрудники();
+            f.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             Пациенты f = new Пациенты();
+            f.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Результаты f = new Результаты();
             f.Show();
         }
     }
