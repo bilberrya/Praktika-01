@@ -1,13 +1,17 @@
-﻿using System;
+﻿using BarcodeLib;
+using STROKESCRIBECLSLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CT = System.Runtime.InteropServices.ComTypes;
 
 namespace lab
 {
@@ -118,9 +122,21 @@ namespace lab
             FillResults();
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int index, n;
+            n = dataGridView1.Rows.Count;
+            if (n == 1) return;
+            index = dataGridView1.CurrentRow.Index;
+
+            Barcode code = new Barcode();
+            Image img = code.Encode(TYPE.UPCA, dataGridView1[0, index].Value.ToString());
+            pictureBox1.Image = img;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            string SqlText = "insert into [Results] ([id_user],[id_lab],[id_service],[result],[data]) VALUES (" + textBox1.Text + ", " + textBox2.Text + ", " + textBox3.Text + ", \'" + textBox4.Text + "\', \'" + textBox5.Text + "\')";
+            string SqlText = "insert into [Results] ([id],[id_user],[id_lab],[id_service],[result],[data]) VALUES (\'" + textBox7.Text + "\', " + textBox1.Text + ", " + textBox2.Text + ", " + textBox3.Text + ", \'" + textBox4.Text + "\', \'" + textBox5.Text + "\')";
             MyExecuteNonQuery(SqlText);
             FillResults();
         }
@@ -140,6 +156,7 @@ namespace lab
                 id_service = dataGridView1[3, index].Value.ToString();
                 result = dataGridView1[4, index].Value.ToString();
                 data = dataGridView1[5, index].Value.ToString();
+                textBox7.Text = id;
                 textBox1.Text = id_user;
                 textBox2.Text = id_lab;
                 textBox3.Text = id_service;
@@ -149,7 +166,7 @@ namespace lab
             }
             else if (r == 1)
             {
-                string SqlText = "update [Results] set id_user = " + textBox1.Text + ", id_lab = " + textBox2.Text + ", id_service = " + textBox3.Text + ", result = \'" + textBox4.Text + "\', data = \'" + textBox5.Text + "\' where id = " + id;
+                string SqlText = "update [Results] set id = \'" + textBox7.Text + "\', id_user = " + textBox1.Text + ", id_lab = " + textBox2.Text + ", id_service = " + textBox3.Text + ", result = \'" + textBox4.Text + "\', data = \'" + textBox5.Text + "\' where id = " + id;
                 MyExecuteNonQuery(SqlText);
                 FillResults();
                 textBox1.Text = "";
@@ -157,6 +174,7 @@ namespace lab
                 textBox3.Text = "";
                 textBox4.Text = "";
                 textBox5.Text = "";
+                textBox7.Text = "";
                 r = 0;
             }
         }
