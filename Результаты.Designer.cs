@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+=======
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -65,11 +72,20 @@
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox6.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox6.ForeColor = System.Drawing.Color.CadetBlue;
+<<<<<<< HEAD
             this.textBox6.Location = new System.Drawing.Point(644, 368);
+=======
+            this.textBox6.Location = new System.Drawing.Point(858, 461);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(144, 29);
+            this.textBox6.Size = new System.Drawing.Size(191, 35);
             this.textBox6.TabIndex = 66;
+<<<<<<< HEAD
             this.textBox6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox6_KeyDown);
+=======
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             // 
             // label5
             // 
@@ -79,9 +95,14 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.CadetBlue;
+<<<<<<< HEAD
             this.label5.Location = new System.Drawing.Point(231, 366);
+=======
+            this.label5.Location = new System.Drawing.Point(335, 458);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 31);
+            this.label5.Size = new System.Drawing.Size(83, 40);
             this.label5.TabIndex = 65;
             this.label5.Text = "Дата";
             // 
@@ -93,9 +114,14 @@
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox5.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox5.ForeColor = System.Drawing.Color.CadetBlue;
+<<<<<<< HEAD
             this.textBox5.Location = new System.Drawing.Point(237, 398);
+=======
+            this.textBox5.Location = new System.Drawing.Point(343, 498);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(165, 29);
+            this.textBox5.Size = new System.Drawing.Size(219, 35);
             this.textBox5.TabIndex = 64;
             // 
             // label4
@@ -106,9 +132,14 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.CadetBlue;
+<<<<<<< HEAD
             this.label4.Location = new System.Drawing.Point(231, 298);
+=======
+            this.label4.Location = new System.Drawing.Point(335, 375);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(146, 31);
+            this.label4.Size = new System.Drawing.Size(186, 40);
             this.label4.TabIndex = 63;
             this.label4.Text = "Результаты";
             // 
@@ -120,9 +151,14 @@
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox4.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox4.ForeColor = System.Drawing.Color.CadetBlue;
+<<<<<<< HEAD
             this.textBox4.Location = new System.Drawing.Point(237, 332);
+=======
+            this.textBox4.Location = new System.Drawing.Point(343, 416);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(165, 29);
+            this.textBox4.Size = new System.Drawing.Size(219, 35);
             this.textBox4.TabIndex = 62;
             // 
             // label3
@@ -133,9 +169,14 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.CadetBlue;
+<<<<<<< HEAD
             this.label3.Location = new System.Drawing.Point(231, 233);
+=======
+            this.label3.Location = new System.Drawing.Point(335, 290);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 31);
+            this.label3.Size = new System.Drawing.Size(172, 40);
             this.label3.TabIndex = 61;
             this.label3.Text = "Код услуги";
             // 
@@ -147,9 +188,14 @@
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox3.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox3.ForeColor = System.Drawing.Color.CadetBlue;
+<<<<<<< HEAD
             this.textBox3.Location = new System.Drawing.Point(237, 267);
+=======
+            this.textBox3.Location = new System.Drawing.Point(343, 332);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(165, 29);
+            this.textBox3.Size = new System.Drawing.Size(219, 35);
             this.textBox3.TabIndex = 60;
             // 
             // comboBox2
@@ -161,9 +207,14 @@
             "Без фильтра",
             "Положительный результат",
             "Отрицательный результат"});
+<<<<<<< HEAD
             this.comboBox2.Location = new System.Drawing.Point(662, 405);
+=======
+            this.comboBox2.Location = new System.Drawing.Point(883, 504);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(125, 31);
+            this.comboBox2.Size = new System.Drawing.Size(165, 37);
             this.comboBox2.TabIndex = 59;
             this.comboBox2.Text = "Фильтр";
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
@@ -174,12 +225,20 @@
             this.comboBox1.ForeColor = System.Drawing.Color.CadetBlue;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
+<<<<<<< HEAD
             "Без сотриторки",
             "Дата: по возрастанию",
             "Дата: по убыванию"});
             this.comboBox1.Location = new System.Drawing.Point(513, 405);
+=======
+            "Без сортировки",
+            "Дата: по возрастанию",
+            "Дата: по убыванию"});
+            this.comboBox1.Location = new System.Drawing.Point(696, 504);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(125, 31);
+            this.comboBox1.Size = new System.Drawing.Size(165, 37);
             this.comboBox1.TabIndex = 58;
             this.comboBox1.Text = "Сортировка";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
@@ -193,9 +252,14 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button3.ForeColor = System.Drawing.Color.Azure;
+<<<<<<< HEAD
             this.button3.Location = new System.Drawing.Point(643, 318);
+=======
+            this.button3.Location = new System.Drawing.Point(853, 402);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(146, 40);
+            this.button3.Size = new System.Drawing.Size(195, 49);
             this.button3.TabIndex = 57;
             this.button3.Text = "Удалить";
             this.button3.UseVisualStyleBackColor = false;
@@ -210,9 +274,14 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.ForeColor = System.Drawing.Color.Azure;
+<<<<<<< HEAD
             this.button2.Location = new System.Drawing.Point(643, 272);
+=======
+            this.button2.Location = new System.Drawing.Point(853, 345);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(146, 40);
+            this.button2.Size = new System.Drawing.Size(195, 49);
             this.button2.TabIndex = 56;
             this.button2.Text = "Редактировать";
             this.button2.UseVisualStyleBackColor = false;
@@ -227,9 +296,14 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.Azure;
+<<<<<<< HEAD
             this.button1.Location = new System.Drawing.Point(643, 226);
+=======
+            this.button1.Location = new System.Drawing.Point(853, 289);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 40);
+            this.button1.Size = new System.Drawing.Size(195, 49);
             this.button1.TabIndex = 55;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = false;
@@ -243,9 +317,14 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.CadetBlue;
+<<<<<<< HEAD
             this.label2.Location = new System.Drawing.Point(13, 361);
+=======
+            this.label2.Location = new System.Drawing.Point(31, 456);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(178, 31);
+            this.label2.Size = new System.Drawing.Size(225, 40);
             this.label2.TabIndex = 54;
             this.label2.Text = "Код лаборанта";
             // 
@@ -257,9 +336,14 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.CadetBlue;
+<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(13, 296);
+=======
+            this.label1.Location = new System.Drawing.Point(31, 375);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 31);
+            this.label1.Size = new System.Drawing.Size(207, 40);
             this.label1.TabIndex = 53;
             this.label1.Text = "Код пациента";
             // 
@@ -271,9 +355,14 @@
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox2.ForeColor = System.Drawing.Color.CadetBlue;
+<<<<<<< HEAD
             this.textBox2.Location = new System.Drawing.Point(19, 395);
+=======
+            this.textBox2.Location = new System.Drawing.Point(39, 498);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(165, 29);
+            this.textBox2.Size = new System.Drawing.Size(219, 35);
             this.textBox2.TabIndex = 52;
             // 
             // textBox1
@@ -284,13 +373,19 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.ForeColor = System.Drawing.Color.CadetBlue;
+<<<<<<< HEAD
             this.textBox1.Location = new System.Drawing.Point(19, 330);
+=======
+            this.textBox1.Location = new System.Drawing.Point(39, 416);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(165, 29);
+            this.textBox1.Size = new System.Drawing.Size(219, 35);
             this.textBox1.TabIndex = 51;
             // 
             // dataGridView1
             // 
+<<<<<<< HEAD
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Azure;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.CadetBlue;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.CadetBlue;
@@ -307,10 +402,30 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.LightCyan;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+=======
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.LightCyan;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightCyan;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.Color.Azure;
-            this.dataGridView1.Location = new System.Drawing.Point(19, 14);
+            this.dataGridView1.Location = new System.Drawing.Point(25, 17);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
+<<<<<<< HEAD
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Azure;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -325,6 +440,23 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.LightCyan;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.Size = new System.Drawing.Size(768, 206);
+=======
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            this.dataGridView1.RowHeadersWidth = 51;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.LightCyan;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            this.dataGridView1.Size = new System.Drawing.Size(1024, 258);
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             this.dataGridView1.TabIndex = 50;
             // 
             // button4
@@ -336,9 +468,16 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button4.ForeColor = System.Drawing.Color.Azure;
+<<<<<<< HEAD
             this.button4.Location = new System.Drawing.Point(466, 233);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(146, 40);
+=======
+            this.button4.Location = new System.Drawing.Point(634, 289);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(195, 49);
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             this.button4.TabIndex = 67;
             this.button4.Text = "Штрих-код";
             this.button4.UseVisualStyleBackColor = false;
@@ -346,9 +485,17 @@
             // 
             // pictureBox1
             // 
+<<<<<<< HEAD
             this.pictureBox1.Location = new System.Drawing.Point(466, 296);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(157, 96);
+=======
+            this.pictureBox1.Location = new System.Drawing.Point(634, 347);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(195, 106);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             this.pictureBox1.TabIndex = 68;
             this.pictureBox1.TabStop = false;
             // 
@@ -360,9 +507,16 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.Color.CadetBlue;
+<<<<<<< HEAD
             this.label6.Location = new System.Drawing.Point(13, 233);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(170, 31);
+=======
+            this.label6.Location = new System.Drawing.Point(32, 289);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(210, 40);
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             this.label6.TabIndex = 70;
             this.label6.Text = "Код пробирки";
             // 
@@ -374,17 +528,28 @@
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox7.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox7.ForeColor = System.Drawing.Color.CadetBlue;
+<<<<<<< HEAD
             this.textBox7.Location = new System.Drawing.Point(19, 267);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(165, 29);
+=======
+            this.textBox7.Location = new System.Drawing.Point(40, 331);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(219, 35);
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             this.textBox7.TabIndex = 69;
             // 
             // Результаты
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(800, 450);
+=======
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.pictureBox1);
@@ -406,6 +571,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Результаты";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Результаты";
@@ -436,7 +602,11 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button4;
+<<<<<<< HEAD
         private System.Windows.Forms.PictureBox pictureBox1;
+=======
+        public System.Windows.Forms.PictureBox pictureBox1;
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox7;
     }

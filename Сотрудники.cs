@@ -14,7 +14,7 @@ namespace lab
     public partial class Сотрудники : Form
     {
         int r = 0, s, p;
-        string ConnStr = @"Data Source=sql;Initial Catalog='44-Практика-Иконникова А.В.-2022';Integrated Security=True";
+        string ConnStr = @"Data Source=desktop-jfut083;Initial Catalog='44-Практика-Иконникова А.В.-2022';Integrated Security=True";
         public Сотрудники()
         {
             InitializeComponent();
@@ -196,7 +196,7 @@ namespace lab
                 n = dataGridView1.Rows.Count;
                 if (n == 1) return;
                 index = dataGridView1.CurrentRow.Index;
-                string id = dataGridView1[0, index].Value.ToString(); ;
+                string id = dataGridView1[0, index].Value.ToString();
                 if (r == 0)
                 {
                     string name, login, password, ip, lastenter, dolgnost, analyzator;

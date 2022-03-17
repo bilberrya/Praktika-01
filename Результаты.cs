@@ -1,21 +1,31 @@
 ﻿using BarcodeLib;
+<<<<<<< HEAD
+=======
+using STROKESCRIBECLSLib;
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CT = System.Runtime.InteropServices.ComTypes;
 
 namespace lab
 {
     public partial class Результаты : Form
     {
         int r = 0, s, p;
+<<<<<<< HEAD
         string ConnStr = @"Data Source=sql;Initial Catalog='44-Практика-Иконникова А.В.-2022';Integrated Security=True";
+=======
+        string ConnStr = @"Data Source=desktop-jfut083;Initial Catalog='44-Практика-Иконникова А.В.-2022';Integrated Security=True";
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
         public Результаты()
         {
             InitializeComponent();
@@ -33,7 +43,11 @@ namespace lab
                     SqlText = "SELECT * FROM [Results] order by data asc";
                 else if (s == 2)
                     SqlText = "SELECT * FROM [Results] order by data desc";
+<<<<<<< HEAD
             }
+=======
+            }  
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             else if (p == 1)
             {
                 if (s == 0)
@@ -77,11 +91,33 @@ namespace lab
             string id;
             index = dataGridView1.CurrentRow.Index;
             id = Convert.ToString(dataGridView1[0, index].Value);
+<<<<<<< HEAD
             string SqlText = "delete from [Results] WHERE id = \'" + id + "\'";
+=======
+            string SqlText = "delete from [Results] WHERE id = " + id;
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
             MyExecuteNonQuery(SqlText);
             FillResults();
         }
 
+<<<<<<< HEAD
+=======
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                dataGridView1.Rows[i].Selected = false;
+                for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                    if (dataGridView1.Rows[i].Cells[j].Value != null)
+                        if (dataGridView1.Rows[i].Cells[j].Value.ToString().Contains(textBox6.Text))
+                        {
+                            dataGridView1.Rows[i].Selected = true;
+                            break;
+                        }
+            }
+        }
+
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem == "Без сортировки")
@@ -116,6 +152,7 @@ namespace lab
             pictureBox1.Image = img;
         }
 
+<<<<<<< HEAD
         private void textBox6_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -136,17 +173,22 @@ namespace lab
             }
         }
 
+=======
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
         private void button1_Click(object sender, EventArgs e)
         {
             string SqlText = "insert into [Results] ([id],[id_user],[id_lab],[id_service],[result],[data]) VALUES (\'" + textBox7.Text + "\', " + textBox1.Text + ", " + textBox2.Text + ", " + textBox3.Text + ", \'" + textBox4.Text + "\', \'" + textBox5.Text + "\')";
             MyExecuteNonQuery(SqlText);
             FillResults();
+<<<<<<< HEAD
             textBox1.Text = "";
             textBox2.Text = "";
             textBox3.Text = "";
             textBox4.Text = "";
             textBox5.Text = "";
             textBox7.Text = "";
+=======
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -174,7 +216,11 @@ namespace lab
             }
             else if (r == 1)
             {
+<<<<<<< HEAD
                 string SqlText = "update [Results] set id = \'" + textBox7.Text + "\', id_user = " + textBox1.Text + ", id_lab = " + textBox2.Text + ", id_service = " + textBox3.Text + ", result = \'" + textBox4.Text + "\', data = \'" + textBox5.Text + "\' where id = \'" + id + "\'";
+=======
+                string SqlText = "update [Results] set id = \'" + textBox7.Text + "\', id_user = " + textBox1.Text + ", id_lab = " + textBox2.Text + ", id_service = " + textBox3.Text + ", result = \'" + textBox4.Text + "\', data = \'" + textBox5.Text + "\' where id = " + id;
+>>>>>>> 6ebefad9165d9b7f050c5b37a9269f9ede055e7c
                 MyExecuteNonQuery(SqlText);
                 FillResults();
                 textBox1.Text = "";

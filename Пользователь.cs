@@ -13,7 +13,7 @@ namespace lab
 {
     public partial class Пользователь : Form
     {
-        string ConnStr = @"Data Source=sql;Initial Catalog='44-Практика-Иконникова А.В.-2022';Integrated Security=True";
+        string ConnStr = @"Data Source=desktop-jfut083;Initial Catalog='44-Практика-Иконникова А.В.-2022';Integrated Security=True";
         public Пользователь()
         {
             InitializeComponent();
