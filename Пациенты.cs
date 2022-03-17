@@ -14,7 +14,7 @@ namespace lab
     public partial class Пациенты : Form
     {
         int r = 0, s, p;
-        string ConnStr = @"Data Source=desktop-jfut083;Initial Catalog='44-Практика-Иконникова А.В.-2022';Integrated Security=True";
+        string ConnStr = @"Data Source=sql;Initial Catalog='44-Практика-Иконникова А.В.-2022';Integrated Security=True";
         public Пациенты()
         {
             InitializeComponent();
@@ -188,7 +188,7 @@ namespace lab
         {
             if (MyClass.dolgnost == "admin")
             {
-                int index, n;
+                int index;
                 string id;
                 index = dataGridView1.CurrentRow.Index;
                 id = Convert.ToString(dataGridView1[0, index].Value);

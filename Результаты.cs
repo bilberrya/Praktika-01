@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BarcodeLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,17 +10,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CT = System.Runtime.InteropServices.ComTypes;
 
 namespace lab
 {
     public partial class Результаты : Form
     {
+        int r = 0, s, p;
         string ConnStr = @"Data Source=sql;Initial Catalog='44-Практика-Иконникова А.В.-2022';Integrated Security=True";
         public Результаты()
         {
             InitializeComponent();
-            string SqlText = "SELECT * FROM [Results]";
+            FillResults();
+        }
+
+        private void FillResults()
+        {
+            string SqlText = null;
+            if (p == 0)
+            {
+                if (s == 0)
+                    SqlText = "SELECT * FROM [Results]";
+                else if (s == 1)
+                    SqlText = "SELECT * FROM [Results] order by data asc";
+                else if (s == 2)
+                    SqlText = "SELECT * FROM [Results] order by data desc";
+            }
+            else if (p == 1)
+            {
+                if (s == 0)
+                    SqlText = "SELECT * FROM [Results]";
+                else if (s == 1)
+                    SqlText = "SELECT * FROM [Results] where result = \'+\' order by data asc";
+                else if (s == 2)
+                    SqlText = "SELECT * FROM [Results] where result = \'+\'  order by data desc";
+            }
+            else if (p == 2)
+            {
+                if (s == 0)
+                    SqlText = "SELECT * FROM [Results]";
+                else if (s == 1)
+                    SqlText = "SELECT * FROM [Results] where result = \'-\' order by data asc";
+                else if (s == 2)
+                    SqlText = "SELECT * FROM [Results] where result = \'-\'  order by data desc";
+            }
             SqlDataAdapter da = new SqlDataAdapter(SqlText, ConnStr);
             DataSet ds = new DataSet();
             da.Fill(ds, "[Results]");
@@ -50,18 +83,24 @@ namespace lab
             FillResults();
         }
 
-        private void textBox6_TextChanged(object sender, EventArgs e)
+        private void textBox6_KeyDown(object sender, KeyEventArgs e)
         {
-            for (int i = 0; i < dataGridView1.RowCount; i++)
+            if (e.KeyCode == Keys.Enter)
             {
-                dataGridView1.Rows[i].Selected = false;
-                for (int j = 0; j < dataGridView1.ColumnCount; j++)
-                    if (dataGridView1.Rows[i].Cells[j].Value != null)
-                        if (dataGridView1.Rows[i].Cells[j].Value.ToString().Contains(textBox6.Text))
-                        {
-                            dataGridView1.Rows[i].Selected = true;
-                            break;
-                        }
+                if (textBox6.Text != "")
+                {
+                    string strok = textBox6.Text;
+                    string SqlText = "select * from [Results] where id Like \'%" + strok + "%\' or id_user like \'%" + strok +
+                        "%\' or id_lab like \'%" + strok + "%\' or id_service like \'%" + strok + "%\' or result like \'%" + strok +
+                        "%\' or data like \'%" + strok + "%\'";
+                    MyExecuteNonQuery(SqlText);
+                    SqlDataAdapter da = new SqlDataAdapter(SqlText, ConnStr);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "[Results]");
+                    dataGridView1.DataSource = ds.Tables["[Results]"].DefaultView;
+                    textBox4.Text = "";
+                }
+                else FillResults();
             }
         }
 

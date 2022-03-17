@@ -13,7 +13,7 @@ namespace lab
 {
     public partial class Главная : Form
     {
-        string ConnStr = @"Data Source=desktop-jfut083;Initial Catalog='44-Практика-Иконникова А.В.-2022';Integrated Security=True";
+        string ConnStr = @"Data Source=sql;Initial Catalog='44-Практика-Иконникова А.В.-2022';Integrated Security=True";
         public Главная()
         {
             InitializeComponent();
@@ -55,13 +55,13 @@ namespace lab
                 {
                     f.label4.Text = name;
                     f.label3.Text = "Лаборант";
-                    f.pictureBox1.Image = Image.FromFile("C:/Users/Anastasia/Desktop/4 курс/шарп/Практика/laborant_1.jpg");
+                    f.pictureBox1.Image = Image.FromFile("X:/практика 01/lab/laborant_1.jpg");
                 }
                 else if (MyClass.dolgnost == "admin")
                 {
                     f.label4.Text = name;
                     f.label3.Text = "Администратор";
-                    f.pictureBox1.Image = Image.FromFile("C:/Users/Anastasia/Desktop/4 курс/шарп/Практика/laborant_2.png");
+                    f.pictureBox1.Image = Image.FromFile("X:/практика 01/lab/laborant_2.png");
                 }
             }
         }
