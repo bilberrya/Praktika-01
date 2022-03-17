@@ -131,6 +131,11 @@ namespace lab
                     string SqlText = "insert into [Users] ([name],[login],[password],[gender],[age]) VALUES (\'" + textBox1.Text + "\', \'" + textBox2.Text + "\', \'" + textBox3.Text + "\', \'" + textBox4.Text + "\', " + textBox5.Text + ")";
                     MyExecuteNonQuery(SqlText);
                     FillUsers();
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    textBox3.Text = "";
+                    textBox4.Text = "";
+                    textBox5.Text = "";
                 }
                 else if (MyClass.dolgnost == "lab")
                     MessageBox.Show("У вас недостаточно прав для редактирования таблицы.", "Внимание!");
@@ -195,18 +200,28 @@ namespace lab
                 MessageBox.Show("У вас недостаточно прав для редактирования таблицы.", "Внимание!");
         }
 
-        private void textBox6_TextChanged(object sender, EventArgs e)
+        private void textBox6_KeyDown(object sender, KeyEventArgs e)
         {
-            for (int i = 0; i < dataGridView1.RowCount; i++)
+            if (e.KeyCode == Keys.Enter)
             {
-                dataGridView1.Rows[i].Selected = false;
-                for (int j = 0; j < dataGridView1.ColumnCount; j++)
-                    if (dataGridView1.Rows[i].Cells[j].Value != null)
-                        if (dataGridView1.Rows[i].Cells[j].Value.ToString().Contains(textBox6.Text))
-                        {
-                            dataGridView1.Rows[i].Selected = true;
-                            break;
-                        }
+                if (textBox6.Text != "")
+                {
+                    string strok = textBox6.Text;
+                    string SqlText;
+                    if (MyClass.dolgnost == "admin")
+                        SqlText = "select * from [Users]";
+                    else SqlText = "select id, name, gender, age from [Users]";
+                    SqlText = SqlText + "where id Like \'%" + strok + "%\' or name like \'%" + strok +
+                        "%\' or login like \'%" + strok + "%\' or password like \'%" + strok + "%\' or gender like \'%" + strok +
+                        "%\' or age like \'%" + strok + "%\'";
+                    MyExecuteNonQuery(SqlText);
+                    SqlDataAdapter da = new SqlDataAdapter(SqlText, ConnStr);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "[Users]");
+                    dataGridView1.DataSource = ds.Tables["[Users]"].DefaultView;
+                    textBox6.Text = "";
+                }
+                else FillUsers();
             }
         }
 

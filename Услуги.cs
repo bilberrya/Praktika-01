@@ -77,6 +77,9 @@ namespace lab
                 string SqlText = "insert into [Service] ([id],[service],[price]) VALUES (" + textBox1.Text + ", \'" + textBox2.Text + "\', " + textBox3.Text + ")";
                 MyExecuteNonQuery(SqlText);
                 FillService();
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
             }
             else if (MyClass.dolgnost == "lab")
                 MessageBox.Show("У вас недостаточно прав для редактирования таблицы.", "Внимание!");
@@ -143,18 +146,23 @@ namespace lab
             FillService();
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private void textBox4_KeyDown(object sender, KeyEventArgs e)
         {
-            for (int i = 0; i < dataGridView1.RowCount; i++)
+            if (e.KeyCode == Keys.Enter)
             {
-                dataGridView1.Rows[i].Selected = false;
-                for (int j = 0; j < dataGridView1.ColumnCount; j++)
-                    if (dataGridView1.Rows[i].Cells[j].Value != null)
-                        if (dataGridView1.Rows[i].Cells[j].Value.ToString().Contains(textBox4.Text))
-                        {
-                            dataGridView1.Rows[i].Selected = true;
-                            break;
-                        }
+                if (textBox4.Text != "")
+                {
+                    string strok = textBox4.Text;
+                    string SqlText ="select * from [Service] where id Like \'%" + strok + "%\' or service like \'%" + strok +
+                        "%\' or price like \'%" + strok + "%\'";
+                    MyExecuteNonQuery(SqlText);
+                    SqlDataAdapter da = new SqlDataAdapter(SqlText, ConnStr);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "[Service]");
+                    dataGridView1.DataSource = ds.Tables["[Service]"].DefaultView;
+                    textBox4.Text = "";
+                }
+                else FillService();
             }
         }
 

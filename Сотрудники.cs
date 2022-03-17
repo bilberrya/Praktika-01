@@ -121,17 +121,7 @@ namespace lab
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-            for (int i = 0; i < dataGridView1.RowCount; i++)
-            {
-                dataGridView1.Rows[i].Selected = false;
-                for (int j = 0; j < dataGridView1.ColumnCount; j++)
-                    if (dataGridView1.Rows[i].Cells[j].Value != null)
-                        if (dataGridView1.Rows[i].Cells[j].Value.ToString().Contains(textBox6.Text))
-                        {
-                            dataGridView1.Rows[i].Selected = true;
-                            break;
-                        }
-            }
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -156,6 +146,31 @@ namespace lab
             FillWorkers();
         }
 
+        private void textBox6_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (textBox6.Text != "")
+                {
+                    string strok = textBox6.Text;
+                    string SqlText;
+                    if (MyClass.dolgnost == "admin")
+                        SqlText = "select * from [Workers]";
+                    else SqlText = "select id, name, dolgnost, analyzator from [Workers]";
+                    SqlText = SqlText + "where id Like \'%" + strok + "%\' or name like \'%" + strok +
+                        "%\' or login like \'%" + strok + "%\' or password like \'%" + strok + "%\' or ip like \'%" + strok +
+                        "%\' or lastenter like \'%" + strok + "%\' or dolgnost like \'%" + strok + "%\' or analyzator like \'%" + strok + "%\'";
+                    MyExecuteNonQuery(SqlText);
+                    SqlDataAdapter da = new SqlDataAdapter(SqlText, ConnStr);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "[Workers]");
+                    dataGridView1.DataSource = ds.Tables["[Workers]"].DefaultView;
+                    textBox6.Text = "";
+                }
+                else FillWorkers();
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             if ((textBox1.Text != "") || (textBox2.Text != "") || (textBox3.Text != "") || (textBox4.Text != "") || (textBox5.Text != "") || (textBox8.Text != ""))
@@ -165,6 +180,13 @@ namespace lab
                     string SqlText = "insert into [Workers] ([name],[login],[password],[ip],[lastenter], [dolgnost], [analyzator]) VALUES (\'" + textBox1.Text + "\', \'" + textBox2.Text + "\', \'" + textBox3.Text + "\', \'" + textBox4.Text + "\', \'" + textBox5.Text + "\', \'" + textBox8.Text + "\', \'" + textBox7.Text + "\')";
                     MyExecuteNonQuery(SqlText);
                     FillWorkers();
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    textBox3.Text = "";
+                    textBox4.Text = "";
+                    textBox5.Text = "";
+                    textBox7.Text = "";
+                    textBox8.Text = "";
                 }
                 else if (MyClass.dolgnost == "lab")
                     MessageBox.Show("У вас недостаточно прав для редактирования таблицы.", "Внимание!");
