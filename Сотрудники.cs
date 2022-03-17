@@ -119,11 +119,6 @@ namespace lab
                 MessageBox.Show("У вас недостаточно прав для редактирования таблицы.", "Внимание!");
         }
 
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem == "Без сортировки")

@@ -82,22 +82,6 @@ namespace lab
             FillResults();
         }
 
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-            
-            //for (int i = 0; i < dataGridView1.RowCount; i++)
-            //{
-            //    dataGridView1.Rows[i].Selected = false;
-            //    for (int j = 0; j < dataGridView1.ColumnCount; j++)
-            //        if (dataGridView1.Rows[i].Cells[j].Value != null)
-            //            if (dataGridView1.Rows[i].Cells[j].Value.ToString().Contains(textBox6.Text))
-            //            {
-            //                dataGridView1.Rows[i].Selected = true;
-            //                break;
-            //            }
-            //}
-        }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem == "Без сортировки")
