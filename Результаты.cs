@@ -16,13 +16,16 @@ namespace lab
     public partial class Результаты : Form
     {
         int r = 0, s, p;
-        string ConnStr = @"Data Source=sql;Initial Catalog='44-Практика-Иконникова А.В.-2022';Integrated Security=True";
+        string ConnStr = @"Data Source=sql;Initial Catalog='44-Практика-Иконникова А.В.-2022';Integrated Security=True"; //строка подключения
         public Результаты()
         {
             InitializeComponent();
             FillResults();
         }
 
+        /// <summary>
+        /// отображения данных из таблицы результатов
+        /// </summary>
         private void FillResults()
         {
             string SqlText = null;
@@ -38,7 +41,7 @@ namespace lab
             else if (p == 1)
             {
                 if (s == 0)
-                    SqlText = "SELECT * FROM [Results]";
+                    SqlText = "SELECT * FROM [Results] where result = \'+\'";
                 else if (s == 1)
                     SqlText = "SELECT * FROM [Results] where result = \'+\' order by data asc";
                 else if (s == 2)
@@ -47,7 +50,7 @@ namespace lab
             else if (p == 2)
             {
                 if (s == 0)
-                    SqlText = "SELECT * FROM [Results]";
+                    SqlText = "SELECT * FROM [Results] where result = \'-\'";
                 else if (s == 1)
                     SqlText = "SELECT * FROM [Results] where result = \'-\' order by data asc";
                 else if (s == 2)
@@ -59,6 +62,10 @@ namespace lab
             dataGridView1.DataSource = ds.Tables["[Results]"].DefaultView;
         }
 
+        /// <summary>
+        /// метод выполнения запросов
+        /// </summary>
+        /// <param name="SqlText"></param>
         public void MyExecuteNonQuery(string SqlText)
         {
             SqlConnection cn;
@@ -72,6 +79,11 @@ namespace lab
             cn.Close();
         }
 
+        /// <summary>
+        /// удаление записи
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             int index;
@@ -83,6 +95,11 @@ namespace lab
             FillResults();
         }
 
+        /// <summary>
+        /// поиск
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBox6_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -104,6 +121,11 @@ namespace lab
             }
         }
 
+        /// <summary>
+        /// сортировка
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem == "Без сортировки")
@@ -115,6 +137,11 @@ namespace lab
             FillResults();
         }
 
+        /// <summary>
+        /// фильтр
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox2.SelectedItem == "Без фильтра")
@@ -126,6 +153,11 @@ namespace lab
             FillResults();
         }
 
+        /// <summary>
+        /// штрих-код
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
             int index, n;
@@ -138,13 +170,29 @@ namespace lab
             pictureBox1.Image = img;
         }
 
+        /// <summary>
+        /// добавление данных
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             string SqlText = "insert into [Results] ([id],[id_user],[id_lab],[id_service],[result],[data]) VALUES (\'" + textBox7.Text + "\', " + textBox1.Text + ", " + textBox2.Text + ", " + textBox3.Text + ", \'" + textBox4.Text + "\', \'" + textBox5.Text + "\')";
             MyExecuteNonQuery(SqlText);
             FillResults();
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox7.Text = "";
         }
 
+        /// <summary>
+        /// редактирование данных
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             int index, n;

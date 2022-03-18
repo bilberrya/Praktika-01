@@ -14,13 +14,17 @@ namespace lab
     public partial class Сотрудники : Form
     {
         int r = 0, s, p;
-        string ConnStr = @"Data Source=sql;Initial Catalog='44-Практика-Иконникова А.В.-2022';Integrated Security=True";
+        string ConnStr = @"Data Source=sql;Initial Catalog='44-Практика-Иконникова А.В.-2022';Integrated Security=True"; //строка подключения
         public Сотрудники()
         {
             InitializeComponent();
             FillWorkers();
         }
 
+        /// <summary>
+        /// метод выплнения запросов
+        /// </summary>
+        /// <param name="SqlText"></param>
         public void MyExecuteNonQuery(string SqlText)
         {
             SqlConnection cn;
@@ -34,10 +38,13 @@ namespace lab
             cn.Close();
         }
 
+        /// <summary>
+        /// вывод данных из таблицы Сотрудники в зависимости от роли пользователя
+        /// </summary>
         private void FillWorkers()
         {
             string SqlText = null;
-            if (MyClass.dolgnost == "lab")
+            if (MyClass.dolgnost == "lab") //лаборант
             {
                 if (p == 0)
                 {
@@ -67,7 +74,7 @@ namespace lab
                         SqlText = "SELECT id, name, dolgnost, analyzator FROM [Workers] where dolgnost = \'admin\' order by name desc";
                 }
             }
-            else if (MyClass.dolgnost == "admin")
+            else if (MyClass.dolgnost == "admin") //админ
             {
                 if (p == 0)
                 {
@@ -103,6 +110,11 @@ namespace lab
             dataGridView1.DataSource = ds.Tables["[Workers]"].DefaultView;
         }
 
+        /// <summary>
+        /// удаление записи
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             if (MyClass.dolgnost == "admin")
@@ -119,6 +131,11 @@ namespace lab
                 MessageBox.Show("У вас недостаточно прав для редактирования таблицы.", "Внимание!");
         }
 
+        /// <summary>
+        /// сортировка
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem == "Без сортировки")
@@ -130,6 +147,11 @@ namespace lab
             FillWorkers();
         }
 
+        /// <summary>
+        /// фильтр
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox2.SelectedItem == "Без фильтра")
@@ -141,6 +163,11 @@ namespace lab
             FillWorkers();
         }
 
+        /// <summary>
+        /// поиск
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBox6_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -166,6 +193,11 @@ namespace lab
             }
         }
 
+        /// <summary>
+        /// добавление записи
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             if ((textBox1.Text != "") || (textBox2.Text != "") || (textBox3.Text != "") || (textBox4.Text != "") || (textBox5.Text != "") || (textBox8.Text != ""))
@@ -188,6 +220,11 @@ namespace lab
             }
         }
 
+        /// <summary>
+        /// редактирование записи
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             if (MyClass.dolgnost == "admin")

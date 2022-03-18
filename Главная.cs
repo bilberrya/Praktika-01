@@ -13,22 +13,37 @@ namespace lab
 {
     public partial class Главная : Form
     {
-        string ConnStr = @"Data Source=sql;Initial Catalog='44-Практика-Иконникова А.В.-2022';Integrated Security=True";
+        string ConnStr = @"Data Source=sql;Initial Catalog='44-Практика-Иконникова А.В.-2022';Integrated Security=True"; //строка подключения
         public Главная()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// прсмотр пароля для проверки
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_MouseDown(object sender, MouseEventArgs e)
         {
             textBox2.PasswordChar = '\0';
         }
 
+        /// <summary>
+        /// замена символов в пароле на *
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_MouseUp(object sender, MouseEventArgs e)
         {
             textBox2.PasswordChar = '*';
         }
 
+        /// <summary>
+        /// открытие формы пользователя в зависимости от его роли
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             string login, name, password;
@@ -66,6 +81,10 @@ namespace lab
             }
         }
     }
+
+    /// <summary>
+    /// глобальная переменная
+    /// </summary>
     class MyClass
     {
         public static string dolgnost { get; set; }

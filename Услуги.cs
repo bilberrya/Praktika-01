@@ -14,13 +14,16 @@ namespace lab
     public partial class Услуги : Form
     {
         int r = 0, s, p;
-        string ConnStr = @"Data Source=sql;Initial Catalog='44-Практика-Иконникова А.В.-2022';Integrated Security=True";
+        string ConnStr = @"Data Source=sql;Initial Catalog='44-Практика-Иконникова А.В.-2022';Integrated Security=True"; //строка подключения
         public Услуги()
         {
             InitializeComponent();
             FillService();
         }
 
+        /// <summary>
+        /// отображение данных из таблицы услуг
+        /// </summary>
         private void FillService()
         {
             string SqlText = null;
@@ -36,7 +39,7 @@ namespace lab
             else if (p == 1)
             {
                 if (s == 0)
-                    SqlText = "SELECT * FROM [Service]";
+                    SqlText = "SELECT * FROM [Service] where price < 200";
                 else if (s == 1)
                     SqlText = "SELECT * FROM [Service] where price < 200 order by service asc";
                 else if (s == 2)
@@ -45,7 +48,7 @@ namespace lab
             else if (p == 2)
             {
                 if (s == 0)
-                    SqlText = "SELECT * FROM [Service]";
+                    SqlText = "SELECT * FROM [Service] where price >= 200";
                 else if (s == 1)
                     SqlText = "SELECT * FROM [Service] where price >= 200 order by service asc";
                 else if (s == 2)
@@ -57,6 +60,10 @@ namespace lab
             dataGridView1.DataSource = ds.Tables["[Service]"].DefaultView;
         }
 
+        /// <summary>
+        /// метод выполнения запросов
+        /// </summary>
+        /// <param name="SqlText"></param>
         public void MyExecuteNonQuery(string SqlText)
         {
             SqlConnection cn;
@@ -70,6 +77,11 @@ namespace lab
             cn.Close();
         }
 
+        /// <summary>
+        /// добавление записи
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             if (MyClass.dolgnost == "admin")
@@ -85,6 +97,11 @@ namespace lab
                 MessageBox.Show("У вас недостаточно прав для редактирования таблицы.", "Внимание!");
         }
 
+        /// <summary>
+        /// редактирование записи
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             if (MyClass.dolgnost == "admin")
@@ -119,6 +136,11 @@ namespace lab
                 MessageBox.Show("У вас недостаточно прав для редактирования таблицы.", "Внимание!");
         }
 
+        /// <summary>
+        /// удаление записи
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             if (MyClass.dolgnost == "admin")
@@ -135,6 +157,11 @@ namespace lab
                 MessageBox.Show("У вас недостаточно прав для редактирования таблицы.", "Внимание!");
         }
 
+        /// <summary>
+        /// фильтр
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox2.SelectedItem == "Без фильтра")
@@ -146,6 +173,11 @@ namespace lab
             FillService();
         }
 
+        /// <summary>
+        /// поиск
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBox4_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -166,6 +198,11 @@ namespace lab
             }
         }
 
+        /// <summary>
+        /// сортировка
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem == "Без сортировки")

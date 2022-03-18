@@ -13,42 +13,33 @@ namespace lab
 {
     public partial class Пользователь : Form
     {
-        string ConnStr = @"Data Source=sql;Initial Catalog='44-Практика-Иконникова А.В.-2022';Integrated Security=True";
         public Пользователь()
         {
             InitializeComponent();
         }
-        public void MyExecuteNonQuery(string SqlText)
-        {
-            SqlConnection cn;
-            SqlCommand cmd;
 
-            cn = new SqlConnection(ConnStr);
-            cn.Open(); 
-            cmd = cn.CreateCommand(); 
-            cmd.CommandText = SqlText; 
-            cmd.ExecuteNonQuery(); 
-            cn.Close(); 
-        }
-
+        //переход на форму услуги
         private void button1_Click(object sender, EventArgs e)
         {
             Услуги f = new Услуги();
             f.Show();
         }
 
+        //переход на форму сотрудники
         private void button2_Click(object sender, EventArgs e)
         {
             Сотрудники f = new Сотрудники();
             f.Show();
         }
 
+        //переход на форму пациенты
         private void button3_Click(object sender, EventArgs e)
         {
             Пациенты f = new Пациенты();
             f.Show();
         }
 
+        //переход на форму результаты
         private void button4_Click(object sender, EventArgs e)
         {
             Результаты f = new Результаты();
